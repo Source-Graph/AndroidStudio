@@ -1,9 +1,18 @@
 ---
 - include_tasks: "common/{{ubuntu_default}}/main.yml"
+  when: ubuntu_default in common
 
-# - name: Install 
-#   ansible.builtin.apt:
-#     pkg:
-#     - htop
-#   become: true
 
+- name: install from commnity ppa
+  block:
+  - name: Add ppa
+    ansible.builtin.apt_repository:
+      repo: "{{ppa}}"
+
+  - name: install Android Studio
+    ansible.builtin.apt:
+      pkg:
+      - android-studio
+  when: ubuntu_default == 'repository'
+  become: true
+  # from https://adamtheautomator.com/android-studio/
