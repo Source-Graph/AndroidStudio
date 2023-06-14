@@ -1,4 +1,5 @@
 ubuntu_default: snap
 # ubuntu_default: repository
+# ubuntu_default: official download
 
 ppa: 'ppa:maarten-fonville/android-studio'
