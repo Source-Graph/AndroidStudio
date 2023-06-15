@@ -1,0 +1,5 @@
+dependencies:
+- AndroidStudio/get
+- AndroidStudio/install
+- emulator acceleration
+- SDK manager

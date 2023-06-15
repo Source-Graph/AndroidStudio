@@ -1,0 +1,6 @@
+---
+- include_tasks: "common/{{ubuntu_default}}/main.yml"
+  when: ubuntu_default in common
+
+- include_tasks: package.yml
+  when: ubuntu_default == 'repository'

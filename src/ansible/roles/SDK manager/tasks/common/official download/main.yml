@@ -1,0 +1,25 @@
+# https://developer.android.com/tools/sdkmanager
+
+# https://medium.com/@barcelos.ds/install-android-sdk-in-the-ubuntu-20-04-lts-without-android-studio-1b629924d6c5
+
+- name: create dirs
+  ansible.builtin.file:
+    path: "{{item}}"
+    state: directory
+  loop:
+  - "{{ava_dir}}"
+
+- name: get Official Download
+  ansible.builtin.get_url:
+    url: "{{download_url}}"
+    dest: "{{local_mirror}}/{{file_name}}"
+    force: false # is not working!
+  when: not (local_mirror + '/' + file_name) is exists # Workaround https://github.com/ansible/ansible/issues/64016#issuecomment-786931909
+
+- name: extract Command line tools only
+  ansible.builtin.unarchive:
+    src: "{{local_mirror}}/{{file_name}}"
+    dest: "{{ava_dir}}/"
+    creates: "{{installed_dir}}"
+
+- include_tasks: install.yml

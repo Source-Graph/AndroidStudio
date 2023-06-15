@@ -1,0 +1,7 @@
+- name: install Android SDK Manager
+  community.general.snap:
+    name:
+      - androidsdk
+    classic: true
+  become: true
+  # notify: initialize Android Studio Snap

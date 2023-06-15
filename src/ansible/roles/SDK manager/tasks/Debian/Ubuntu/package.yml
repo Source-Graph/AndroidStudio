@@ -1,0 +1,5 @@
+- name: install android-sdk package
+  ansible.builtin.apt:
+    pkg:
+    - android-sdk
+  become: true

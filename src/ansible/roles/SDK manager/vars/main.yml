@@ -1,0 +1,8 @@
+# Official Download
+latest_version: 9477386
+download_url: "https://dl.google.com/android/repository/commandlinetools-linux-{{latest_version}}_latest.zip"
+file_name: "commandlinetools-linux-{{latest_version}}_latest.zip"
+
+# Install to
+ava_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}/Android"
+installed_dir: "{{ava_dir}}/sdk-manager"

@@ -1,0 +1,5 @@
+- name: install cmdline-tools component
+  ansible.builtin.shell: sdkmanager --install "cmdline-tools;latest"
+  args:
+    chdir: "{{installed_dir}}/bin"
+    creates: somelog.txt
