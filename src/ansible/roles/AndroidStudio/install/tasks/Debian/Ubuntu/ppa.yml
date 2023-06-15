@@ -1,0 +1,10 @@
+- name: Add ppa
+  ansible.builtin.apt_repository:
+    repo: "{{ppa}}"
+  become: true
+
+- name: install Android Studio
+  ansible.builtin.apt:
+    pkg:
+    - android-studio
+  become: true

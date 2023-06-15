@@ -3,16 +3,7 @@
   when: ubuntu_default in common
 
 
-- name: install from commnity ppa
-  block:
-  - name: Add ppa
-    ansible.builtin.apt_repository:
-      repo: "{{ppa}}"
-
-  - name: install Android Studio
-    ansible.builtin.apt:
-      pkg:
-      - android-studio
+- include_tasks: ppa.yml
   when: ubuntu_default == 'repository'
-  become: true
+
   # from https://adamtheautomator.com/android-studio/
