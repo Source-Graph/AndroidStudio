@@ -28,14 +28,19 @@
 - name: move into latest
   command: "mv {{installed_dir}}/{{item}} {{latest}}/"
   args:
-    creates: "{{latest}}/source.properties"
+    creates: "{{latest}}/NOTICE.txt"
   loop:
   - bin
   - lib
   - source.properties
+  - NOTICE.txt
 
 # - name: install cmdline-tools
 #   ansible.builtin.shell: './sdkmanager --install "cmdline-tools;latest"'
 #   args:
 #     chdir: "{{latest}}/bin"
 #     creates: "{{ava_dir}}/.knownPackages"
+
+
+- debug:
+    msg: "TODO Fix Asap!!!!@@@@"
