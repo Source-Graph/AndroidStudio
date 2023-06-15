@@ -5,4 +5,6 @@ ubuntu_default: official download
 ppa: 'ppa:maarten-fonville/android-studio'
 
 # User Preference
-android_home: Android/Sdk
+sdk: Android/Sdk
+sdk_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{sdk_path}}"
+android_home: "{{sdk_path}}"

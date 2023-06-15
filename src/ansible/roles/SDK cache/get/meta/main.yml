@@ -1,0 +1,4 @@
+dependencies:
+# Recursively reference other Roles' variables
+  - Android Studio/get
+  - MinIO/get
