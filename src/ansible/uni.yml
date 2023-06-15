@@ -7,7 +7,8 @@
     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
 
   roles:
-  # - AndroidStudio
-  # - SDK cache/save
+# - SDK cache/restore
+  - AndroidStudio
   - SDK manager
-  - env variable
+  - environment variable
+# - SDK cache/save
