@@ -2,8 +2,5 @@
 - include_tasks: "common/{{ubuntu_default}}/main.yml"
   when: ubuntu_default in common
 
-
 - include_tasks: ppa.yml
   when: ubuntu_default == 'repository'
-
-  # from https://adamtheautomator.com/android-studio/
