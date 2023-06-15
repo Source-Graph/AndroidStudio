@@ -1,1 +1,0 @@
-restore_to: "{{ lookup('ansible.builtin.env', 'HOME') }}/home/me/Android/Sdk/"

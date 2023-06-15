@@ -1,0 +1,7 @@
+- debug:
+    msg: "{{sdk_dir}} || {{local_mirror}}/{{archive_file}}"
+
+- name: archive Sdk to local_mirror
+  community.general.archive:
+    path: "{{sdk_dir}}"
+    dest: "{{local_mirror}}/{{archive_file}}"

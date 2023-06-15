@@ -1,3 +1,0 @@
-dependencies:
-  - SDK cache/get
-  - minio/client

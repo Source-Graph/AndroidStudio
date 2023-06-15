@@ -1,0 +1,5 @@
+archive_file: "Android-Sdk.tgz"
+
+sdk_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}/Android/Sdk"
+
+local_mirror: "{{ lookup('ansible.builtin.env', 'HOME') }}/.uni/mirror"
