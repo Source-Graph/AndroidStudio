@@ -34,8 +34,8 @@
   - lib
   - source.properties
 
-- name: install cmdline-tools
-  ansible.builtin.shell: './sdkmanager --install "cmdline-tools;latest"'
-  args:
-    chdir: "{{latest}}/bin"
-    creates: "{{ava_dir}}/.knownPackages"
+# - name: install cmdline-tools
+#   ansible.builtin.shell: './sdkmanager --install "cmdline-tools;latest"'
+#   args:
+#     chdir: "{{latest}}/bin"
+#     creates: "{{ava_dir}}/.knownPackages"
