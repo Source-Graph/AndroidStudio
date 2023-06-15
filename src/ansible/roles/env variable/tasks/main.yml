@@ -1,0 +1,12 @@
+# https://developer.android.com/tools/variables#set
+
+- name: environment variables
+  ansible.builtin.blockinfile:
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{item}}"
+    create: true
+    block: |
+      export ANDROID_HOME ~/Android/Sdk
+      export PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+  loop:
+  - .bash_profile
+  - .bashrc
