@@ -5,4 +5,4 @@ file_name: "commandlinetools-linux-{{latest_version}}_latest.zip"
 
 # Install to
 ava_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}/Android"
-installed_dir: "{{ava_dir}}/sdk-manager"
+installed_dir: "{{ava_dir}}/cmdline-tools"
