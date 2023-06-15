@@ -1,7 +1,5 @@
 # https://developer.android.com/tools/sdkmanager
 
-# https://medium.com/@barcelos.ds/install-android-sdk-in-the-ubuntu-20-04-lts-without-android-studio-1b629924d6c5
-
 - name: create dirs
   ansible.builtin.file:
     path: "{{item}}"
@@ -22,4 +20,22 @@
     dest: "{{ava_dir}}/"
     creates: "{{installed_dir}}"
 
-- include_tasks: install.yml
+- name: create latest dir
+  ansible.builtin.file:
+    path: "{{latest}}"
+    state: directory
+
+- name: move into latest
+  command: "mv {{installed_dir}}/{{item}} {{latest}}/"
+  args:
+    creates: "{{latest}}/source.properties"
+  loop:
+  - bin
+  - lib
+  - source.properties
+
+- name: install cmdline-tools
+  ansible.builtin.shell: './sdkmanager --install "cmdline-tools;latest"'
+  args:
+    chdir: "{{latest}}/bin"
+    creates: "{{ava_dir}}/.knownPackages"
