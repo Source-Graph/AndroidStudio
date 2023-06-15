@@ -1,5 +1,12 @@
+
+
+- name: create dir latest
+  ansible.builtin.file:
+    path: "{{latest}}"
+    state: directory
+
 - name: install cmdline-tools component
-  ansible.builtin.shell: sdkmanager --install "cmdline-tools;latest"
+  ansible.builtin.shell: './sdkmanager --install "cmdline-tools;latest"'
   args:
-    chdir: "{{installed_dir}}/bin"
+    chdir: "{{latest}}/bin"
     creates: somelog.txt
