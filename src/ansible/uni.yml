@@ -2,8 +2,6 @@
 # init is not needed if you're only running on localhost!
 - hosts: localhost #, fedora, ubuntu
   vars:
-    somevar: "value"
-    source: "package"
     # Host_vars
     ansible_become_password: u
     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
