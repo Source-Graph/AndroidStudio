@@ -24,6 +24,6 @@
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{item}}"
     create: true
     block: |
-      export ANDROID_HOME ~/{{android_home}}
-      export PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+      export ANDROID_HOME=~/{{android_home}}
+      export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
   loop: "{{profile_file}}"
