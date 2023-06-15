@@ -1,4 +1,4 @@
 ---
 dependencies:
 - AndroidStudio/install
-# - AndroidStudio/config
+- AndroidStudio/emulator acceleration

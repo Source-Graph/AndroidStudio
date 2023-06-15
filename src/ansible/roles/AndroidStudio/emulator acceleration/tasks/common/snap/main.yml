@@ -1,0 +1,7 @@
+- name: install Android Studio Snap
+  community.general.snap:
+    name:
+      - android-studio
+    classic: true
+  become: true
+  # notify: initialize Android Studio Snap

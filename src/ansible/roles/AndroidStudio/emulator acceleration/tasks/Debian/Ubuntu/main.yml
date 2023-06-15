@@ -1,0 +1,10 @@
+- name: install emulator-acceleration dependencies
+  ansible.builtin.apt:
+    pkg:
+    - qemu-kvm
+    - libvirt-daemon-system
+    - libvirt-clients
+    - bridge-utils
+  become: true
+
+# https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
