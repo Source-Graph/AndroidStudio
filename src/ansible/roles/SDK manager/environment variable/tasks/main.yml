@@ -16,14 +16,12 @@
         - .bashrc
         - "{{ '.profile' if profile.stat.exists else '.bash_profile' if bash_profile.stat.exists }}"
 
-# - debug:
-#     msg: "{{profile_file}}" 
-
 - name: environment variables
   ansible.builtin.blockinfile:
-    marker: "# Android SDK"
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/{{item}}"
     create: true
+    marker_begin: "<Android SDK"
+    marker_end: "Android SDK/>"
     block: |
       export ANDROID_HOME=~/{{android_home}}
       export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
