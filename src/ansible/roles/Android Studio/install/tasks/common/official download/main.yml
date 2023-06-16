@@ -14,6 +14,9 @@
     force: false # is not working!
   when: not (local_mirror + '/' + file_name) is exists # Workaround https://github.com/ansible/ansible/issues/64016#issuecomment-786931909
 
+- debug:
+    msg: "Foo {{local_mirror}}/{{file_name}} Bar {{ava_dir}}/ Now {{installed_dir}}"
+
 - name: extract ava/android-studio
   ansible.builtin.unarchive:
     src: "{{local_mirror}}/{{file_name}}"
@@ -26,3 +29,8 @@
     src: jetbrains-studio.desktop
     dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.local/share/applications/"
     mode: '0600'
+
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.include_role:
+    name: Android Studio/emulator acceleration
+  when: cpu_virtualization_enabled

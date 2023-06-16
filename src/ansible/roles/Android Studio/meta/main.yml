@@ -1,5 +1,4 @@
 dependencies:
 - Android Studio/get
+- uni/get
 - Android Studio/install
-- Android Studio/emulator acceleration
-- SDK manager

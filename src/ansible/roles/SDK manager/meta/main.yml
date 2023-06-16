@@ -1,3 +1,4 @@
 dependencies:
+- uni/get
 - Android Studio/get
 - SDK manager/environment variable

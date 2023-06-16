@@ -13,5 +13,5 @@
   roles:
 # - SDK cache/restore
   - Android Studio
-  - SDK manager
+  # - SDK manager
 # - SDK cache/save
