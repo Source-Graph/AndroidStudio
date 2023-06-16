@@ -23,6 +23,6 @@
     marker_begin: "<Android SDK"
     marker_end: "Android SDK/>"
     block: |
-      export ANDROID_HOME=~/{{android_home}}
+      export ANDROID_HOME={{android_home}}
       export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
   loop: "{{profile_file}}"
