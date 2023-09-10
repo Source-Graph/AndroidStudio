@@ -1,17 +1,17 @@
 ---
 - hosts: localhost
-  roles:
-  - .pre
-
-# init is not needed if you're only running on localhost!
-- hosts: localhost #, fedora, ubuntu
   vars:
     # Host_vars
     ansible_become_password: u
-    ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
 
   roles:
-# - SDK cache/restore
-  - Android Studio
-  - SDK manager
+  - role: Android Studio
+    tags: [ all ]
+
+  - role: SDK manager
+    tags: [ SDK, never ]
 # - SDK cache/save
+# - SDK cache/restore
+
+  - role: ADB
+    tags: [ adb ]
